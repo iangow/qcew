@@ -32,7 +32,7 @@ process_qcew_data <- function(year, schema = "qcew", data_dir = NULL,
 
   filename <- stringr::str_glue("{year}_annual_singlefile.zip")
   t <- path.expand(file.path(raw_data_dir, filename))
-  csv_file <- unzip(t)
+  csv_file <- unzip(t, exdir = tempdir())
 
   pq_file <- stringr::str_glue("annual_{year}.parquet")
   pq_path <- path.expand(file.path(data_dir, pq_file))
