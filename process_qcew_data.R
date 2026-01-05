@@ -14,7 +14,7 @@ get_qcew_zip_data <- function(year, schema = "qcew",
                            "/csv/{year}_annual_singlefile.zip")
   t <- file.path(raw_data_dir, basename(url))
   if (!file.exists(t)) download.file(url, t)
-  return(TRUE)
+  invisible(t)
 }
 
 res <- lapply(years, get_qcew_zip_data)
