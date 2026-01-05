@@ -1,7 +1,8 @@
 years <- 2001:2024L
 
-get_qcew_zip_data <- function(year, raw_data_dir = NULL,
-                              schema = "qcew") {
+get_qcew_zip_data <- function(year, schema = "qcew",
+                              data_dir = NULL,
+                              raw_data_dir = NULL) {
 
   if (is.null(raw_data_dir)) {
     raw_data_dir <- file.path(Sys.getenv("RAW_DATA_DIR"), schema)
