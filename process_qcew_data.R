@@ -49,4 +49,4 @@ process_qcew_data <- function(year, schema = "qcew", data_dir = NULL,
   res
 }
 
-res <- lapply(years[1], process_qcew_data)
+res <- lapply(years, process_qcew_data)
